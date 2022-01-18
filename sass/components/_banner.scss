@@ -1,0 +1,48 @@
+.banner{
+  //Como las modificaciones en media query son pocas, se crean variables y se modifican según la media query.
+  --banner-padding: 6rem #{$normal-space} 4rem;
+  --banner-logo-height: 9rem;
+  @include from(m){
+    --banner-padding: 8rem #{$normal-space} 6rem;
+    --banner-logo-height: 12.5rem;
+  }
+  @include from(l){
+    --banner-padding: 8.5rem #{$normal-space} 6rem;
+    --banner-logo-height: 12.5rem;
+  }
+  //-------------------------------------
+
+  padding: var(--banner-padding);
+  position: relative;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0);
+  background-color: $border-color;
+  background-image: linear-gradient(0deg, $border-color 30%, $background-color 90%);
+
+  &-heroimage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .banner-container{
+    display: flex;
+    flex-direction: column;
+    
+    & > *{
+      margin: 0 auto;
+    }
+
+    &-img{
+      margin-bottom: $normal-space;
+      max-height: var(--banner-logo-height);
+      display: block;
+      border: 3px solid $text-color;
+      border-radius: 50%;
+    }
+  }
+}

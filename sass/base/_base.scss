@@ -1,0 +1,39 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: $font-family-first;
+  font-size: var(--body-font-size);
+  background-color: $background-color;
+  color: $text-color;
+  position: relative;
+  margin: 0;
+}
+h1{
+  font-size: var(--h1-font-size);
+}
+h2{
+  font-size: var(--h2-font-size);
+}
+h3, h4, h3, h6{
+  font-size: var(--h3-font-size);
+}
+a{
+  text-decoration: none;
+  color: currentColor;
+}
+img{
+  max-width: 100%;
+}
+
+
+.margin-auto{
+  margin-left: auto;
+  margin-right: auto;
+}

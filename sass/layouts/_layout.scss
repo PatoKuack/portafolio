@@ -1,0 +1,49 @@
+//Columnas grid:
+:root{
+  --columns: 4;
+  --column-gap: 6.67%;
+  --row-gap: 1.5rem;
+  
+  @include from(m){
+    --columns: 12;
+    --column-gap: 2.27%;
+    --row-gap: 1rem;
+  }
+  
+  @include from(l){
+    --columns: 12;
+    --column-gap: 2.19%;
+    --row-gap: 1.5rem;
+  }
+}
+
+.layer-container{
+  margin: $max-space $normal-space;
+  @include from(m){
+    margin: $max-space $max-space;
+  }
+  @include from(l){
+    margin: calc(#{$max-space} + #{$normal-space}) 5rem;
+  }
+  @include from(xl){
+    margin: calc(#{$max-space} * 2) auto;
+    max-width: $max-width;
+  }
+}
+
+.layer-container, .layer-subcontainer{
+  display: grid;
+  grid-column-gap: var(--column-gap);
+  grid-row-gap: var(--row-gap);
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  position: relative;
+}
+
+.layer-container > *{
+  padding: $normal-space;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-self: center;
+  // align-self: center;
+}

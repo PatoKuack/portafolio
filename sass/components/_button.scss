@@ -1,0 +1,29 @@
+.button{
+  color: $button-color;
+  display: inline-block;
+  border: 1px solid;
+  padding: $min-space $normal-space;
+  border-radius: .25rem;
+  font-weight: bold;
+
+  &:hover{
+    background-color: $button-color;
+    color: $background-color;
+  }
+  &-l-github{
+    background-image: url('../../binarios/github_button.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &-l-web{
+    background-image: url('../../binarios/working-button.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+[class*="button-l"]:hover{
+  color: transparent;
+}

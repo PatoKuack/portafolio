@@ -1,0 +1,82 @@
+.card{
+  // scroll-behavior: smooth;
+
+  &-projects, &-aboutme, &-obj_goal{
+    scroll-margin-top: $header-height;
+  }
+
+  &-diagonal{
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $border-color;
+      z-index: var(--z-back);
+      transform: skewY(-1.5deg) scaleY(1.025);
+      @include from(l){
+        transform: skewY(-2deg) scaleY(1.1);
+      }
+    }
+  }
+  &-proj-image{
+    display: block;
+  }
+  &-proj-title{
+    font-size: 1rem;
+  }
+  &-projects-content-multiple{
+    padding: $normal-space;
+    border: 1px solid $border-color;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-proj-subtitle{
+    margin-top: -.1rem;
+    margin-bottom: $min-space;
+    opacity: .6;
+    font-size: small;
+  }
+  &-proj-footer{
+    border-top: 1px solid $border-color;
+    margin-top: $normal-space;
+    padding-top: $normal-space;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+
+[class$="#{-content-unique}"]{
+  grid-area: 1/1/2/5;
+  @include from(m){
+    grid-column: 1/13;
+  }
+}
+[class$="#{-content-double}"]{
+  grid-column: span 4;
+  grid-row: span 1;
+  @include from(m){
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+}
+[class$="#{-content-multiple}"]{
+  grid-column: span 4;
+  grid-row: span 1;
+  background-color: $bg-alternative;
+  @include from(m){
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  @include from(l){
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+}
+

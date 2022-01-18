@@ -1,0 +1,43 @@
+.footer{
+  padding: $normal-space;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include from(m){
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  
+  &-copyright{
+    font-size: small;
+    padding: $normal-space 0 $min-space 0;
+  }
+}
+
+.footer-network{
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin-right: $normal-space;
+  
+  &-title{
+    text-align: center;
+  }
+  &-container{
+    padding-top: $min-space;
+    height: $max-space;
+  }
+  &-logo{
+    padding: 0 $min-space;
+    height: 100%;
+  }
+  &-logo > *{
+    height: 100%;
+  }
+}
+
+[src$=".webp"]{
+  filter: brightness(0%)
+}

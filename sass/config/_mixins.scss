@@ -1,0 +1,13 @@
+@mixin from($bp){
+  //Si el mapa "breackpoints" tiene el valor obtenido en el argumento del mixin, se aplicará una media query.
+  @if map-has-key($breackpoints, $bp){
+    //Si la pantalla del dispositivo tiene un ancho mínimo del valor (se extrae el valor de la variable "bp") del argumento del mixin.
+    @media screen and (min-width: map_get($breackpoints, $bp)) {
+      @content;
+    }
+  }@else{
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}

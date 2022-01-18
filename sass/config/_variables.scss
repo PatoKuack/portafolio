@@ -1,0 +1,63 @@
+$breackpoints: (
+  xs  : 360px, //celular de pantalla pequeña
+  s   : 440px, //celular de pantalla grande
+  m   : 768px, //tablet
+  l   : 1280px, //laptop
+  xl  : 1440px //computadora de pantalla grande
+);
+
+//Paleta de colores:
+:root{
+  --first-color       : rgb(246, 253, 255);
+  --border-color      : #b8eafd;
+  --background-color  : aliceblue;
+  --text-color        : #284255;
+  --alert-color       : tomato;
+}
+
+//Variables de apilamiento (z-index):
+:root{
+  --z-back      : -10;  //mandar atras
+  --z-normal    : 1;    //mantener apilamiento
+  --z-tooltip   : 10;   //mandar encima
+  --z-fixed     : 100;  //para elementos fijos
+  --z-modal     : 1000; //para ventanas modales
+}
+
+//Variables de tipografía:
+:root{
+  --h1-font-size    : 1.5rem;
+  --h2-font-size    : 1.25rem;
+  --h3-font-size    : 1.1rem;
+  --body-font-size  : .9rem;
+  --small-font-size : .75rem;
+  @media screen and (min-width: map_get($breackpoints, m)){
+    --h1-font-size    : 2rem;
+    --h2-font-size    : 1.5rem;
+    --h3-font-size    : 1.3rem;
+    --body-font-size  : 1rem;
+    --small-font-size : .8rem;
+  }
+}
+
+//Otros valores:
+:root{
+  --header-height: 3rem;
+  @media screen and (min-width: map_get($breackpoints, m)){
+    --header-height: 4rem;
+  }
+}
+
+$header-height  : var(--header-height);
+$max-width      : 1280px;
+$min-space      : .5rem;
+$normal-space   : 1rem;
+$max-space      : 2rem;
+
+$text-color       : var(--text-color);      
+$border-color     : var(--border-color);
+$background-color : var(--background-color);
+$bg-alternative   : var(--first-color);
+$button-color     : var(--alert-color);
+
+$font-family-first: 'Open Sans', 'sans-serif';

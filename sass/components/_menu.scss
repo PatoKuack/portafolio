@@ -1,0 +1,119 @@
+.menu{ //Menú del navegador de la cabecera.
+  // Resetear menú.
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  //--------------
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  padding-top: $normal-space;
+
+  &-link{
+    margin-left: $normal-space;
+    padding: $normal-space;
+    display: flex;
+    align-items: center;
+    // scroll-padding-top: 5rem;
+  }
+  &-link:hover{
+    background-color: $border-color;
+  }
+
+  @include from(m){
+    padding-top: 0;
+    flex-direction: row;
+    height: 100%;
+
+    &-link{
+      margin-left: 0;
+      padding: 0 $normal-space;
+      height: 100%;
+    }
+  }
+  @include from(l){
+    &-link{
+      padding: 0 $max-space;
+    }
+  }
+}
+
+.navigator{ //Navegador de la cabecera.
+  right: -80vw;
+  position: fixed;
+  height: calc(100vh - #{$header-height});
+  width: 70vw;
+  top: $header-height;
+  transition: right .5s;
+  z-index: var(--z-fixed);
+  border-left: 1px solid $border-color;
+  background-color: $background-color;
+
+  &.show{
+    right: 0;
+  }
+
+  @include from(m){
+    position: static;
+    height: 90%;
+    width: auto;
+    border: none;
+  }
+}
+
+.toggle{ //Botón hamburguesa.
+  width: 2.2rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform .5s;
+
+  &::before, &::after{
+    content: '';
+    display: block;
+  }
+  &::before, &::after, &-lines{
+    width: 100%;
+    height: 20%;
+    background-color: $text-color;
+    position: absolute;
+  }
+
+  //Animación de botón hamburguesa.
+  &.active{
+    transform: rotate(-90deg);
+  }
+  &::before{
+    top: 0%;
+    transition: transform .5s .5s, top .5s .5s;
+  }
+  &.active::before{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  &-lines{
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    transition: width .5s .5s, left .5s .5s;
+  }
+  &.active &-lines{
+    transition: width .5s, left .5s;
+    width: 20%;
+    left: 40%;
+  }
+  &::after{
+    bottom: 0%;
+    transition: transform .5s .5s, bottom .5s .5s;
+  }
+  &.active::after{
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+  //------------------------------
+
+  @include from(m){
+    display: none;
+  }
+}
