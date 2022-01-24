@@ -3,7 +3,11 @@
   --border-color: #b8eafd;
   --background-color: aliceblue;
   --text-color: #284255;
-  --alert-color: tomato; }
+  --alert-color: #6B50A6;
+  /* 
+  --alert-color       : #CDBAF5
+  #0E8CA7
+  */ }
 
 :root {
   --z-back: -10;
