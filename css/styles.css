@@ -4,10 +4,19 @@
   --background-color: aliceblue;
   --text-color: #284255;
   --alert-color: #6B50A6;
+  --second-color: #f3ecf7;
   /* 
   --alert-color       : #CDBAF5
   #0E8CA7
   */ }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --first-color: rgba(2, 76, 97, 0.445);
+      --border-color: #0ea1c2;
+      --background-color: #284255;
+      --text-color: aliceblue;
+      --alert-color: #ebddf1;
+      --second-color: #6B50A6; } }
 
 :root {
   --z-back: -10;
@@ -352,13 +361,13 @@ img {
       flex-direction: row; } }
   .footer-copyright {
     font-size: small;
-    padding: 1rem 0 0.5rem 0; }
+    padding: 1rem 0 0.5rem 0;
+    text-align: center; }
 
 .footer-network {
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  margin-right: 1rem; }
+  align-items: space-between; }
   .footer-network-title {
     text-align: center; }
   .footer-network-container {
@@ -379,7 +388,8 @@ img {
   border: 1px solid;
   padding: 0.5rem 1rem;
   border-radius: .25rem;
-  font-weight: bold; }
+  font-weight: bold;
+  background-color: var(--second-color); }
   .button:hover {
     background-color: var(--alert-color);
     color: var(--background-color); }
@@ -388,11 +398,17 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; }
+    @media (prefers-color-scheme: dark) {
+      .button-l-github {
+        background-image: url("../../binarios/github_button_dark.svg"); } }
   .button-l-web {
-    background-image: url("../../binarios/working-button.svg");
+    background-image: url("../../binarios/working_button.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; }
+    @media (prefers-color-scheme: dark) {
+      .button-l-web {
+        background-image: url("../../binarios/working_button_dark.svg"); } }
 
 [class*="button-l"]:hover {
   color: transparent; }

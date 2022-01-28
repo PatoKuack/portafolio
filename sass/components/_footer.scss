@@ -13,6 +13,7 @@
   &-copyright{
     font-size: small;
     padding: $normal-space 0 $min-space 0;
+    text-align: center;
   }
 }
 
@@ -20,7 +21,6 @@
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  margin-right: $normal-space;
   
   &-title{
     text-align: center;
@@ -36,8 +36,4 @@
   &-logo > *{
     height: 100%;
   }
-}
-
-[src$=".webp"]{
-  filter: brightness(0%)
 }

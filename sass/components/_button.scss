@@ -5,6 +5,7 @@
   padding: $min-space $normal-space;
   border-radius: .25rem;
   font-weight: bold;
+  background-color: $button-alternative;
 
   &:hover{
     background-color: $button-color;
@@ -15,12 +16,18 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    @media (prefers-color-scheme : dark) {
+      background-image: url('../../binarios/github_button_dark.svg');
+    }
   }
   &-l-web{
-    background-image: url('../../binarios/working-button.svg');
+    background-image: url('../../binarios/working_button.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    @media (prefers-color-scheme : dark) {
+      background-image: url('../../binarios/working_button_dark.svg');
+    }
   }
 }
 
