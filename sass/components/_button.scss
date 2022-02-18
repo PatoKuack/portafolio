@@ -3,7 +3,7 @@
   display: inline-block;
   border: 1px solid;
   padding: $min-space $normal-space;
-  border-radius: .25rem;
+  border-radius: calc(#{$min-space} / 2);
   font-weight: bold;
   background-color: $button-alternative;
 

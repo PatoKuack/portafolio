@@ -1,22 +1,24 @@
 :root {
-  --first-color: rgb(246, 253, 255);
+  --first-color: #f6fdff;
   --border-color: #b8eafd;
-  --background-color: aliceblue;
+  --background-color: #f0f8ff;
   --text-color: #284255;
   --alert-color: #6B50A6;
   --second-color: #f3ecf7;
+  --decoration-color: rgb(224, 248, 250);
   /* 
   --alert-color       : #CDBAF5
   #0E8CA7
   */ }
   @media (prefers-color-scheme: dark) {
     :root {
-      --first-color: rgba(2, 76, 97, 0.445);
+      --first-color: #024c6171;
       --border-color: #0ea1c2;
       --background-color: #284255;
       --text-color: aliceblue;
       --alert-color: #ebddf1;
-      --second-color: #6B50A6; } }
+      --second-color: #6B50A6;
+      --decoration-color: rgb(16, 100, 107); } }
 
 :root {
   --z-back: -10;
@@ -145,7 +147,8 @@ img {
   scroll-padding-top: var(--header-height); }
 
 .logo {
-  height: calc(var(--header-height) / 1.8); }
+  height: calc(var(--header-height) / 1.8);
+  width: auto; }
 
 .text-logo {
   padding-left: 0.5rem; }
@@ -245,7 +248,6 @@ img {
   position: relative;
   text-align: center;
   clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0);
-  background-color: var(--border-color);
   background-image: linear-gradient(0deg, var(--border-color) 30%, var(--background-color) 90%); }
   @media screen and (min-width: 768px) {
     .banner {
@@ -263,17 +265,22 @@ img {
     width: 100%;
     object-fit: contain;
     object-position: center; }
-  .banner .banner-container {
-    display: flex;
-    flex-direction: column; }
-    .banner .banner-container > * {
-      margin: 0 auto; }
-    .banner .banner-container-img {
-      margin-bottom: 1rem;
-      max-height: var(--banner-logo-height);
-      display: block;
-      border: 3px solid var(--text-color);
-      border-radius: 50%; }
+
+.banner-container {
+  display: flex;
+  flex-direction: column; }
+  .banner-container > * {
+    margin: 0 auto; }
+  .banner-container-img {
+    margin-bottom: 1rem;
+    max-height: var(--banner-logo-height);
+    display: block;
+    border: 3px solid var(--text-color);
+    border-radius: 50%;
+    box-shadow: 0px calc(var(--banner-logo-height) / 2.8) 30px -50px #0b3641; }
+    @media screen and (min-width: 768px) {
+      .banner-container-img {
+        box-shadow: 0px calc(var(--banner-logo-height) / 3.5) 30px -50px black; } }
 
 .card-projects, .card-aboutme, .card-obj_goal {
   scroll-margin-top: var(--header-height); }
@@ -302,10 +309,12 @@ img {
 .card-projects-content-multiple {
   padding: 1rem;
   border: 1px solid var(--border-color);
-  border-radius: 5%;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
 
 .card-proj-subtitle {
   margin-top: -.1rem;
@@ -320,6 +329,24 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between; }
+
+.card-decoration1 {
+  width: 1rem;
+  height: 1rem;
+  transform: translate3d(-1.3rem, -1.3rem, 0) rotate3d(1, -1, 0, 70deg); }
+
+.card-decoration2 {
+  width: 2rem;
+  height: 2rem;
+  transform: translate3d(-1.4rem, -1.4rem, 0) rotate3d(1, -1, 0, 70deg);
+  backface-visibility: hidden; }
+
+[class^="card-decoration"] {
+  border-color: var(--alert-color) transparent transparent var(--alert-color);
+  border-radius: 50%;
+  border-width: .15rem;
+  border-style: solid;
+  position: absolute; }
 
 [class$="-content-unique"] {
   grid-area: 1/1/2/5; }
@@ -351,6 +378,7 @@ img {
 .footer {
   padding: 1rem;
   border: 1px solid var(--border-color);
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -379,15 +407,12 @@ img {
   .footer-network-logo > * {
     height: 100%; }
 
-[src$=".webp"] {
-  filter: brightness(0%); }
-
 .button {
   color: var(--alert-color);
   display: inline-block;
   border: 1px solid;
   padding: 0.5rem 1rem;
-  border-radius: .25rem;
+  border-radius: calc(0.5rem / 2);
   font-weight: bold;
   background-color: var(--second-color); }
   .button:hover {
@@ -422,3 +447,20 @@ img {
 
 .icon-location::before {
   background-image: url(); }
+
+.body-decoration {
+  --start-height: 150px;
+  --start-width: -50px;
+  position: absolute;
+  z-index: var(--z-back);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(60deg, var(--decoration-color) 2%, transparent 2%, transparent 98%, var(--decoration-color) 98%), linear-gradient(120deg, var(--decoration-color) 2%, transparent 2%, transparent 98%, var(--decoration-color) 98%), radial-gradient(circle at 30rem 22rem, transparent 3rem, var(--decoration-color) 3rem, var(--decoration-color) 3.5rem, transparent 3.5rem), radial-gradient(circle at 34rem 20rem, transparent 2rem, var(--decoration-color) 2rem, var(--decoration-color) 2.5rem, transparent 2.5rem), radial-gradient(circle at 18rem 26rem, var(--decoration-color) 1.5rem, transparent 1.5rem, transparent 3rem, var(--decoration-color) 3rem, var(--decoration-color) 3.5rem, transparent 3.5rem), radial-gradient(ellipse at 7rem 23.5rem, transparent 1rem, var(--decoration-color) 1rem, var(--decoration-color) 1.5rem, transparent 1.5rem), radial-gradient(circle at 12.5rem 12.5rem, var(--background-color) 4rem, transparent 4rem), radial-gradient(circle at 10rem 10rem, var(--decoration-color) 8rem, transparent 8rem);
+  background-repeat: repeat;
+  background-size: 50rem 30rem;
+  background-position: var(--start-width) var(--start-height); }
+  @media screen and (min-width: 768px) {
+    .body-decoration {
+      --start-height: 100px;
+      --start-width: 0px; } }

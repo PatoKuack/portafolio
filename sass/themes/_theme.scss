@@ -1,0 +1,27 @@
+.body-decoration{
+  --start-height: 150px;
+  --start-width : -50px;
+  @include from(m){
+    --start-height: 100px;
+    --start-width : 0px;
+  }
+
+  position: absolute;
+  z-index: var(--z-back);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  // clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, 80% 80%, 60% 80%, 60% 60%, 40% 60%, 40% 40%, 20% 40%, 20% 20%, 0 20%, 0 0 );
+  background-image: 
+        linear-gradient(60deg, $decoration-color 2%, transparent 2%, transparent 98%, $decoration-color 98%),
+        linear-gradient(120deg, $decoration-color 2%, transparent 2%, transparent 98%, $decoration-color 98%),
+        radial-gradient(circle at 30rem 22rem, transparent 3rem, $decoration-color 3rem, $decoration-color 3.5rem, transparent 3.5rem),
+        radial-gradient(circle at 34rem 20rem, transparent 2rem, $decoration-color 2rem, $decoration-color 2.5rem, transparent 2.5rem),
+        radial-gradient(circle at 18rem 26rem, $decoration-color 1.5rem, transparent 1.5rem, transparent 3rem, $decoration-color 3rem, $decoration-color 3.5rem, transparent 3.5rem),
+        radial-gradient(ellipse at 7rem 23.5rem, transparent 1rem, $decoration-color 1rem, $decoration-color 1.5rem, transparent 1.5rem),
+        radial-gradient(circle at 12.5rem 12.5rem, $background-color 4rem, transparent 4rem),
+        radial-gradient(circle at 10rem 10rem, $decoration-color 8rem, transparent 8rem);
+  background-repeat: repeat;
+  background-size: 50rem 30rem;
+  background-position: var(--start-width) var(--start-height);
+}
