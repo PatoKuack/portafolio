@@ -1,10 +1,12 @@
 const maxWithPhone = 1024;
-const showMenu = (toggleId, navigatorId, bannerId, mainId, footerId) => {
-  const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navigatorId),
-        banner =  document.getElementById(bannerId),
-        main =  document.getElementById(mainId),
-        footer =  document.getElementById(footerId);
+const toggle = document.getElementById('menu-toggle'),
+      nav = document.getElementById('menu-navigator'),
+      banner =  document.getElementById('banner'),
+      main =  document.getElementById('card'),
+      footer =  document.getElementById('footer'),
+      profileImage = document.getElementById('banner-container-img');
+
+const showMenu = () => {
   
   if (toggle && nav && banner && main && footer) {
     //Si se hace clic en el boton hamburguesa, se colocarán las clases "shoe" y "active".
@@ -22,9 +24,9 @@ const showMenu = (toggleId, navigatorId, bannerId, mainId, footerId) => {
 
     //Si se da clic fuera del navegador o del menú, se eliminará la clase "show" y "active".
     const removeShowActive = () => {
-      let className = nav.classList[1];
-      let classNumber = nav.classList.length;
-      if(classNumber==2 && className=="show"){
+      let className1 = nav.classList[1];
+      let classNumber1 = nav.classList.length;
+      if(classNumber1==2 && className1=="show"){
           nav.classList.remove('show');
           toggle.classList.remove('active');
       }
@@ -41,4 +43,12 @@ const showMenu = (toggleId, navigatorId, bannerId, mainId, footerId) => {
   }
 }
 
-showMenu('menu-toggle', 'menu-navigator', 'banner', 'card', 'footer');
+const showImage = () => {
+  profileImage.addEventListener('click', () => {
+    profileImage.classList.toggle('imageShow');
+    banner.classList.toggle('imageShow');
+  });
+}
+
+showMenu();
+showImage();

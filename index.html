@@ -11,6 +11,12 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <!-- ------------------- -->
+  <!-- Otros metas: -->
+  <meta name="author" contenrt="Davidalejandro Ramírez pérez">
+  <meta name="description" content="Este es mi portafolio, podrás ver mis proyecyos y habilidades con la programación &#128521;">
+  <meta name="keywords" content="Pato, Kuack">
+  <meta name="robots" content="index,follow">
+  <!-- ------------------- -->
   <!-- fuentes: -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +30,8 @@
 </head>
 
 <body class="body" id="body">
-  <div class="body-decoration"></div>
+  <!-- <img src="binarios/profile_small.jpg" alt="foto de perfil" title="foto de perfil" class="showing-img" id="showing-img"> -->
+  <div class="body-decoration" id="body-decoration"></div>
   <!-- header: título y navegador -->
   <header class="header">
     <div class="header-container">
@@ -99,44 +106,44 @@
     </div>
   </header>
   <!-- div.banner: presentación -->
-  <div class="banner" id="banner">
+  <section class="banner" id="banner">
     <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Palacio_de_Bellas_Artes_-_CDMX.jpg" alt="Banner background" class="banner-heroimage"> -->
-    <div class="banner-container">
-      <img src="binarios/profile_small.jpg" alt="foto de perfil" title="foto de perfil" class="banner-container-img">
+    <article class="banner-container">
+      <img src="binarios/profile_small.jpg" alt="foto de perfil" title="foto de perfil" class="banner-container-img" id="banner-container-img">
       <h1 class="banner-container-title">David Alejandro Ramírez Pérez</h1>
       <p class="banner-container-subtitle">Front-end junior</p>
-    </div>
-  </div>
+    </article>
+  </section>
   <!-- main: contenido -->
   <main class="card" id="card">
     <!-- About me -->
     <section class="card-aboutme layer-container" id="aboutme">
-      <div class="card-aboutme-content-unique">
+      <article class="card-aboutme-content-unique">
         <h2>Acerca de mí:</h2>
         <p>
           &#128515; Soy un programador súper positivo y muy entusiasta.<br/>
-          &#128215; Siempre me ha encantado aprender y desde que terminé mi carrera universitaria me ha apasionado aprender sobre programación a través de plataformas online.<br/>
-          &#129504; Recientemente aprendí HTML y CSS, estoy aprendiendo JavaScript y proximamente aprenderé python y php.<br/>
+          &#128215; Me encanta aprender constantemente, desde que terminé mi carrera universitaria me ha apasionado aprender sobre programación a través de plataformas online.<br/>
+          &#129504; Recientemente aprendí a utilizar el preprocesador SASS, estoy aprendiendo JavaScript y próximamente aprenderé el manejo de Wordpress.<br/>
           &#128231; Si te interesa, contáctame a través de: david.ale.ramirezpe@gmail.com
         </p>
-      </div>
+      </article>
     </section>
     <!-- objetivos y metas -->
     <section class="card-obj_goal layer-container" id="obj_goal">
-      <div class="card-objectives-content-double">
+      <article class="card-objectives-content-double">
         <h3>Objetivos:</h3>
         <p>Continuar aprendiendo (con buenas prácticas) nuevos lenguajes de programación, entre ellos python, php, c# y java, para llegar a desarrollar inteligencia artificial o ejercer seguridad informática.</p>
-      </div>
-      <div class="card-goals-content-double">
+      </article>
+      <article class="card-goals-content-double">
         <h3>Metas:</h3>
         <p>Desarrollarme en el área laboral en una empresa que requiera mis conocimientos en desarrollo web.</p>
-      </div>
+      </article>
     </section>
     <!-- Proyectos -->
     <div class="card-diagonal">
       <section class="card-projects layer-container" id="projects">
         <h2 class="title-content-unique">Proyectos:</h2>
-        <div class="card-projects-content-multiple">
+        <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
@@ -150,8 +157,8 @@
             <a href="https://pk-manual-html.netlify.app/" target="_blank" rel="noopener noreferrer"><button
                 class="button button-l-web">Ver proyecto</button></a>
           </div>
-        </div>
-        <div class="card-projects-content-multiple">
+        </article>
+        <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
@@ -165,8 +172,8 @@
             <a href="https://pk-manual-css.netlify.app/" target="_blank" rel="noopener noreferrer"><button
                 class="button button-l-web">Ver proyecto</button></a>
           </div>
-        </div>
-        <div class="card-projects-content-multiple">
+        </article>
+        <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
@@ -180,8 +187,8 @@
             <a href="https://pk-manual-javascript.netlify.app/" target="_blank" rel="noopener noreferrer"><button
                 class="button button-l-web">Ver proyecto</button></a>
           </div>
-        </div>
-        <div class="card-projects-content-multiple">
+        </article>
+        <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
@@ -195,7 +202,7 @@
             <a href="https://pk-manual-github.netlify.app/" target="_blank" rel="noopener noreferrer"><button
                 class="button button-l-web">Ver proyecto</button></a>
           </div>
-        </div>
+        </article>
       </section>
     </div>
     <!-- <section class="card-experiencia layer-container">
@@ -243,7 +250,7 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <p>Copyright 2022: David Alejandro Ramírez Pérez.</p>
+      <p>Copyright © 2022 Pato Kuack todos los derechos reservados.</p>
     </div>
   </footer>
   <script src="javascript/scripts.js"></script>

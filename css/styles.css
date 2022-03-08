@@ -243,20 +243,22 @@ img {
 
 .banner {
   --banner-padding: 6rem 1rem 4rem;
-  --banner-logo-height: 9rem;
+  --banner-image-height: 9rem;
   padding: var(--banner-padding);
   position: relative;
   text-align: center;
   clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0);
-  background-image: linear-gradient(0deg, var(--border-color) 30%, var(--background-color) 90%); }
+  background-image: linear-gradient(0deg, var(--border-color) 30%, var(--background-color) 90%);
+  transition-property: height, clip-path, color;
+  transition-duration: .5s; }
   @media screen and (min-width: 768px) {
     .banner {
       --banner-padding: 8rem 1rem 6rem;
-      --banner-logo-height: 12.5rem; } }
+      --banner-image-height: 12.5rem; } }
   @media screen and (min-width: 1280px) {
     .banner {
       --banner-padding: 8.5rem 1rem 6rem;
-      --banner-logo-height: 12.5rem; } }
+      --banner-image-height: 12.5rem; } }
   .banner-heroimage {
     position: absolute;
     top: 0;
@@ -265,22 +267,35 @@ img {
     width: 100%;
     object-fit: contain;
     object-position: center; }
+  .banner.imageShow {
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 94%, 0 100%, 0 0);
+    color: transparent; }
 
 .banner-container {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative; }
   .banner-container > * {
     margin: 0 auto; }
   .banner-container-img {
     margin-bottom: 1rem;
-    max-height: var(--banner-logo-height);
+    max-height: var(--banner-image-height);
     display: block;
     border: 3px solid var(--text-color);
     border-radius: 50%;
-    box-shadow: 0px calc(var(--banner-logo-height) / 2.8) 30px -50px #0b3641; }
+    cursor: pointer;
+    box-shadow: 0px calc(var(--banner-image-height) / 2.8) 30px -50px #0b3641;
+    transition-property: transform, border-radius;
+    transition-duration: .5s; }
     @media screen and (min-width: 768px) {
       .banner-container-img {
-        box-shadow: 0px calc(var(--banner-logo-height) / 3.5) 30px -50px black; } }
+        box-shadow: 0px calc(var(--banner-image-height) / 3.5) 30px -50px black; } }
+  .banner-container-img.imageShow {
+    transform: scale3d(2, 2, 2) translate3d(0, calc(var(--header-height)), 0);
+    border-radius: 0%;
+    z-index: var(--z-fixed);
+    overflow: visible; }
 
 .card-projects, .card-aboutme, .card-obj_goal {
   scroll-margin-top: var(--header-height); }
@@ -456,6 +471,7 @@ img {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  pointer-events: none;
   background-image: linear-gradient(60deg, var(--decoration-color) 2%, transparent 2%, transparent 98%, var(--decoration-color) 98%), linear-gradient(120deg, var(--decoration-color) 2%, transparent 2%, transparent 98%, var(--decoration-color) 98%), radial-gradient(circle at 30rem 22rem, transparent 3rem, var(--decoration-color) 3rem, var(--decoration-color) 3.5rem, transparent 3.5rem), radial-gradient(circle at 34rem 20rem, transparent 2rem, var(--decoration-color) 2rem, var(--decoration-color) 2.5rem, transparent 2.5rem), radial-gradient(circle at 18rem 26rem, var(--decoration-color) 1.5rem, transparent 1.5rem, transparent 3rem, var(--decoration-color) 3rem, var(--decoration-color) 3.5rem, transparent 3.5rem), radial-gradient(ellipse at 7rem 23.5rem, transparent 1rem, var(--decoration-color) 1rem, var(--decoration-color) 1.5rem, transparent 1.5rem), radial-gradient(circle at 12.5rem 12.5rem, var(--background-color) 4rem, transparent 4rem), radial-gradient(circle at 10rem 10rem, var(--decoration-color) 8rem, transparent 8rem);
   background-repeat: repeat;
   background-size: 50rem 30rem;
