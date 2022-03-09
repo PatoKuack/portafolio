@@ -14,17 +14,19 @@ $breackpoints: (
   --text-color        : #284255;
   --alert-color       : #6B50A6;
   --second-color      : #f3ecf7;
-  --decoration-color  : rgb(224, 248, 250);
+  --decoration-color  : #e0f8fa;
+  // --checked-color     : #2196F3;
   
   
   @media (prefers-color-scheme : dark) {
     --first-color       : #024c6171;
     --border-color      : #0ea1c2;
     --background-color  : #284255;
-    --text-color        : aliceblue;
+    --text-color        : #f0f8ff;
     --alert-color       : #ebddf1;
     --second-color      : #6B50A6;
-    --decoration-color  : rgb(16, 100, 107);
+    --decoration-color  : #10646b;
+    // --checked-color     : #2196F3;
   }
 
   /* 

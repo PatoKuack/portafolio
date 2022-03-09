@@ -4,7 +4,9 @@ const toggle = document.getElementById('menu-toggle'),
       banner =  document.getElementById('banner'),
       main =  document.getElementById('card'),
       footer =  document.getElementById('footer'),
-      profileImage = document.getElementById('banner-container-img');
+      profileImage = document.getElementById('banner-container-img'),
+      bannerBalloon = document.getElementById('banner-balloon'),
+      bannerBalloonText = document.getElementById('banner-balloon-text');
 
 const showMenu = () => {
   
@@ -47,8 +49,28 @@ const showImage = () => {
   profileImage.addEventListener('click', () => {
     profileImage.classList.toggle('imageShow');
     banner.classList.toggle('imageShow');
+    let className2 = banner.classList[1];
+    let classNumber2 = banner.classList.length;
+    if(classNumber2==2 && className2=="imageShow"){
+      window.addEventListener('scroll', () => {
+        profileImage.classList.remove('imageShow');
+        banner.classList.remove('imageShow');
+      });
+    }
   });
+}
+
+const showGreat = () => {
+  // window.addEventListener('load', () => {
+  //   bannerBalloon.classList.add("showgreat");
+  //   bannerBalloonText.classList.add("showgreat");
+    bannerBalloonText.addEventListener('animationend', () => {
+      bannerBalloon.classList.remove("showgreat");
+      bannerBalloonText.classList.remove("showgreat");
+    });
+  // });
 }
 
 showMenu();
 showImage();
+showGreat();
