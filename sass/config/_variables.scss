@@ -6,7 +6,7 @@ $breackpoints: (
   xl  : 1440px //computadora de pantalla grande
 );
 
-//Paleta de colores:
+//Paleta de colores (temas brilloso/oscuro):
 :root{
   --first-color       : #f6fdff;
   --border-color      : #b8eafd;
@@ -16,7 +16,20 @@ $breackpoints: (
   --second-color      : #f3ecf7;
   --decoration-color  : #e0f8fa;
   // --checked-color     : #2196F3;
-  
+
+  .dark-theme {
+    --first-color       : #024c6171;
+    --border-color      : #0ea1c2;
+    --background-color  : #284255;
+    --text-color        : #f0f8ff;
+    --alert-color       : #ebddf1;
+    --second-color      : #6B50A6;
+    --decoration-color  : #10646b;
+    // --checked-color     : #2196F3;
+    & img{
+      filter: brightness(.8) contrast(1.2);
+    }
+  }
   
   @media (prefers-color-scheme : dark) {
     --first-color       : #024c6171;
@@ -27,6 +40,23 @@ $breackpoints: (
     --second-color      : #6B50A6;
     --decoration-color  : #10646b;
     // --checked-color     : #2196F3;
+    img{
+      filter: brightness(.8) contrast(1.2);
+    }
+
+    .light-theme{
+      --first-color       : #f6fdff;
+      --border-color      : #b8eafd;
+      --background-color  : #f0f8ff;
+      --text-color        : #284255;
+      --alert-color       : #6B50A6;
+      --second-color      : #f3ecf7;
+      --decoration-color  : #e0f8fa;
+      // --checked-color     : #2196F3;
+      img{
+        filter: brightness(1) contrast(1);
+      }
+    }
   }
 
   /* 

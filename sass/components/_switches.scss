@@ -1,22 +1,25 @@
 // https://www.w3schools.com/howto/howto_css_switch.asp
+[class^="switch"]{
+  position: absolute;
+  display: inline-block;
+}
+[class$="input"]{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 .switch-idioms {
 
   --idiom-signal: "es";
 
 
-  position: absolute;
-  display: inline-block;
   top: calc(var(--header-height) + .5em);
   left: 1.5em;
   width: 4em;
   height: 2.2em;
-  opacity: 70%;
+  opacity: 90%;
   
-  &-input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
   &-slider {
     position: absolute;
     cursor: pointer;
@@ -28,13 +31,10 @@
     -webkit-transition: .4s;
     transition: .4s;
   }
-  &-slider:before {
+  &-slider::before {
     position: absolute;
     content: var(--idiom-signal);
     text-align: center;
-    // margin: auto;
-    // height: 26px;
-    // width: 26px;
     padding: .1em .3em .2em .3em;
     left: .3em;
     top: .3em;
@@ -50,15 +50,68 @@
     box-shadow: 0 0 1px var(--alert-color);
   }
   &-input:checked + &-slider:before {
-    -webkit-transform: translateX(1.5em);
-    -ms-transform: translateX(1.5em);
-    transform: translateX(1.5em);
+    -webkit-transform: translateX(1.6em);
+    -ms-transform: translateX(1.6em);
+    transform: translateX(1.6em);
   }
 
   &-slider.switch-round {
-    border-radius: 34px;
+    border-radius: 2em;
   }
   &-slider.switch-round:before {
     border-radius: 50%;
+  }
+}
+
+.switch-lightdark{
+  top: calc(var(--header-height) + 3.2em);
+  left: 1.5em;
+  width: 2.2em;
+  height: 2.2em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(transparent 40%, var(--alert-color) 100%),
+    radial-gradient(ellipse at 33% 23%, rgba(255, 255, 255, 0.774) 5%, transparent 10%),
+    radial-gradient(ellipse at 25% 30%, rgba(255, 255, 255, 0.774) 5%, transparent 10%),
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.774) 3%, transparent 8%);
+
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &-moonsun {
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 41% 47%, var(--background-color) 20%, transparent 20%),
+      radial-gradient(var(--text-color) 35%, transparent 35%);
+    -webkit-mask-image: radial-gradient(circle at 41% 47%, transparent 20%, var(--text-color) 20%);
+  }
+
+  &-input:checked + &-moonsun {
+    clip-path: polygon(50% 20%, 55% 35%, 70% 30%, 65% 45%, 80% 50%, 65% 55%, 70% 70%, 55% 65%, 50% 80%, 45% 65%, 30% 70%, 35% 55%, 20% 50%, 35% 45%, 30% 30%, 45% 35%, 50% 20%);
+    background-image:
+      radial-gradient(var(--text-color) 35%, transparent 35%);
+    -webkit-mask-image: radial-gradient(circle at 0% 0%, var(--text-color) 20%, var(--text-color) 20%);
+  }
+}
+
+.scaling{
+  -webkit-animation-name: scaling;
+  animation-name: scaling;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+@keyframes scaling {
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    -ms-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
   }
 }

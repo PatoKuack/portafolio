@@ -10,6 +10,16 @@
   --alert-color       : #CDBAF5
   #0E8CA7
   */ }
+  :root .dark-theme {
+    --first-color: #024c6171;
+    --border-color: #0ea1c2;
+    --background-color: #284255;
+    --text-color: #f0f8ff;
+    --alert-color: #ebddf1;
+    --second-color: #6B50A6;
+    --decoration-color: #10646b; }
+    :root .dark-theme img {
+      filter: brightness(0.8) contrast(1.2); }
   @media (prefers-color-scheme: dark) {
     :root {
       --first-color: #024c6171;
@@ -18,7 +28,19 @@
       --text-color: #f0f8ff;
       --alert-color: #ebddf1;
       --second-color: #6B50A6;
-      --decoration-color: #10646b; } }
+      --decoration-color: #10646b; }
+      :root img {
+        filter: brightness(0.8) contrast(1.2); }
+      :root .light-theme {
+        --first-color: #f6fdff;
+        --border-color: #b8eafd;
+        --background-color: #f0f8ff;
+        --text-color: #284255;
+        --alert-color: #6B50A6;
+        --second-color: #f3ecf7;
+        --decoration-color: #e0f8fa; }
+        :root .light-theme img {
+          filter: brightness(1) contrast(1); } }
 
 :root {
   --z-back: -10;
@@ -82,6 +104,9 @@ img {
 .margin-auto {
   margin-left: auto;
   margin-right: auto; }
+
+.text-english {
+  display: none; }
 
 :root {
   --columns: 4;
@@ -190,7 +215,8 @@ img {
   transition: right .5s;
   z-index: var(--z-fixed);
   border-left: 1px solid var(--border-color);
-  background-color: var(--background-color); }
+  background-color: var(--background-color);
+  opacity: 98%; }
   .navigator.show {
     right: 0; }
   @media screen and (min-width: 768px) {
@@ -407,30 +433,30 @@ img {
   border-style: solid;
   position: absolute; }
 
-[class$="-content-unique"] {
+[class*="-content-unique"] {
   grid-area: 1/1/2/5; }
   @media screen and (min-width: 768px) {
-    [class$="-content-unique"] {
+    [class*="-content-unique"] {
       grid-column: 1/13; } }
 
-[class$="-content-double"] {
+[class*="-content-double"] {
   grid-column: span 4;
   grid-row: span 1; }
   @media screen and (min-width: 768px) {
-    [class$="-content-double"] {
+    [class*="-content-double"] {
       grid-column: span 6;
       grid-row: span 1; } }
 
-[class$="-content-multiple"] {
+[class*="-content-multiple"] {
   grid-column: span 4;
   grid-row: span 1;
   background-color: var(--first-color); }
   @media screen and (min-width: 768px) {
-    [class$="-content-multiple"] {
+    [class*="-content-multiple"] {
       grid-column: span 6;
       grid-row: span 1; } }
   @media screen and (min-width: 1280px) {
-    [class$="-content-multiple"] {
+    [class*="-content-multiple"] {
       grid-column: span 4;
       grid-row: span 1; } }
 
@@ -455,8 +481,6 @@ img {
   display: flex;
   flex-direction: column;
   align-items: space-between; }
-  .footer-network-title {
-    text-align: center; }
   .footer-network-container {
     padding-top: 0.5rem;
     height: 2rem; }
@@ -497,19 +521,22 @@ img {
 [class*="button-l"]:hover {
   color: transparent; }
 
+[class^="switch"] {
+  position: absolute;
+  display: inline-block; }
+
+[class$="input"] {
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
 .switch-idioms {
   --idiom-signal: "es";
-  position: absolute;
-  display: inline-block;
   top: calc(var(--header-height) + .5em);
   left: 1.5em;
   width: 4em;
   height: 2.2em;
-  opacity: 70%; }
-  .switch-idioms-input {
-    opacity: 0;
-    width: 0;
-    height: 0; }
+  opacity: 90%; }
   .switch-idioms-slider {
     position: absolute;
     cursor: pointer;
@@ -520,7 +547,7 @@ img {
     background-color: var(--border-color);
     -webkit-transition: .4s;
     transition: .4s; }
-  .switch-idioms-slider:before {
+  .switch-idioms-slider::before {
     position: absolute;
     content: var(--idiom-signal);
     text-align: center;
@@ -536,13 +563,51 @@ img {
   .switch-idioms-input:focus + .switch-idioms-slider {
     box-shadow: 0 0 1px var(--alert-color); }
   .switch-idioms-input:checked + .switch-idioms-slider:before {
-    -webkit-transform: translateX(1.5em);
-    -ms-transform: translateX(1.5em);
-    transform: translateX(1.5em); }
+    -webkit-transform: translateX(1.6em);
+    -ms-transform: translateX(1.6em);
+    transform: translateX(1.6em); }
   .switch-idioms-slider.switch-round {
-    border-radius: 34px; }
+    border-radius: 2em; }
   .switch-idioms-slider.switch-round:before {
     border-radius: 50%; }
+
+.switch-lightdark {
+  top: calc(var(--header-height) + 3.2em);
+  left: 1.5em;
+  width: 2.2em;
+  height: 2.2em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-image: radial-gradient(transparent 40%, var(--alert-color) 100%), radial-gradient(ellipse at 33% 23%, rgba(255, 255, 255, 0.774) 5%, transparent 10%), radial-gradient(ellipse at 25% 30%, rgba(255, 255, 255, 0.774) 5%, transparent 10%), radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.774) 3%, transparent 8%); }
+  .switch-lightdark > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .switch-lightdark-moonsun {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 41% 47%, var(--background-color) 20%, transparent 20%), radial-gradient(var(--text-color) 35%, transparent 35%);
+    -webkit-mask-image: radial-gradient(circle at 41% 47%, transparent 20%, var(--text-color) 20%); }
+  .switch-lightdark-input:checked + .switch-lightdark-moonsun {
+    clip-path: polygon(50% 20%, 55% 35%, 70% 30%, 65% 45%, 80% 50%, 65% 55%, 70% 70%, 55% 65%, 50% 80%, 45% 65%, 30% 70%, 35% 55%, 20% 50%, 35% 45%, 30% 30%, 45% 35%, 50% 20%);
+    background-image: radial-gradient(var(--text-color) 35%, transparent 35%);
+    -webkit-mask-image: radial-gradient(circle at 0% 0%, var(--text-color) 20%, var(--text-color) 20%); }
+
+.scaling {
+  -webkit-animation-name: scaling;
+  animation-name: scaling;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate; }
+
+@keyframes scaling {
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    -ms-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1); } }
 
 [class*="icon-"]::before {
   content: "";

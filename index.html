@@ -16,6 +16,7 @@
   <meta name="description" content="Este es mi portafolio, podrás ver mis proyecyos y habilidades con la programación &#128521;">
   <meta name="keywords" content="Pato, Kuack">
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0ea1c2 #b8eafd">
   <!-- ------------------- -->
   <!-- fuentes: -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,8 +86,12 @@
       </a>
       <div class="header-container-options">
         <label class="switch-idioms">
-          <input type="checkbox" class="switch-idioms-input">
-          <span class="switch-idioms-slider switch-round"></span>
+          <input type="checkbox" class="switch-idioms-input" id="switch-idioms">
+          <div class="switch-idioms-slider switch-round"></div>
+        </label>
+        <label class="switch-lightdark" id="switch-lightdark-container">
+          <input type="checkbox" class="switch-lightdark-input" id="switch-lightdark">
+          <div class="switch-lightdark-moonsun" id="switch-lightdark-moonsun"></div>
         </label>
       </div>
       <div class="toggle" id="menu-toggle">
@@ -95,17 +100,21 @@
       <nav class="navigator" id="menu-navigator">
         <ul class="menu">
           <a class="menu-link" href="#aboutme">
-            <li class="menu-item">Acerca de mí</li>
+            <li class="menu-item text-spanish">Acerca de mí</li>
+            <li class="menu-item text-english">About me</li>
           </a>
           <a class="menu-link" href="#obj_goal">
-            <li class="menu-item">Objetivos y metas</li>
+            <li class="menu-item text-spanish">Objetivos y metas</li>
+            <li class="menu-item text-english">Objectives and goals</li>
           </a>
           <a class="menu-link" href="#projects">
-            <li class="menu-item">Proyectos</li>
+            <li class="menu-item text-spanish">Proyectos</li>
+            <li class="menu-item text-english">Projects</li>
           </a>
           <!-- <a class="menu-link" href="#experience"><li class="menu-item">Experiencia</li></a> -->
           <a class="menu-link" href="#footer">
-            <li class="menu-item">Redes sociales</li>
+            <li class="menu-item text-spanish">Redes sociales</li>
+            <li class="menu-item text-english">Social media</li>
           </a>
         </ul>
       </nav>
@@ -118,7 +127,10 @@
       <div class="banner-container-welcome">
         <img src="binarios/profile_small.jpg" alt="foto de perfil" title="foto de perfil" class="banner-container-img" id="banner-container-img">
         <div class="banner-container-great showgreat" id="banner-balloon">
-          <div class="great-balloon showgreat" id="banner-balloon-text"><p class="great-balloon-text">¡Bienvenido a mi<br/>portafolio!</p></div>
+          <div class="great-balloon showgreat" id="banner-balloon-text">
+            <p class="great-balloon-text text-spanish">¡Bienvenido a mi<br/>portafolio!</p>
+            <p class="great-balloon-text text-english">¡Welcome to my<br/>portfolio!</p>
+          </div>
         </div>
       </div>
       <h1 class="banner-container-title">David Alejandro Ramírez Pérez</h1>
@@ -130,99 +142,149 @@
     <!-- About me -->
     <section class="card-aboutme layer-container" id="aboutme">
       <article class="card-aboutme-content-unique">
-        <h2>Acerca de mí:</h2>
-        <p>
+        <h2 class="text-spanish">Acerca de mí:</h2>
+        <h2 class="text-english">About me:</h2>
+        <p class="text-spanish">
           &#128515; Soy un programador súper positivo y muy entusiasta.<br/>
           &#128215; Me encanta aprender constantemente, desde que terminé mi carrera universitaria me ha apasionado aprender sobre programación a través de plataformas online.<br/>
           &#129504; Recientemente aprendí a utilizar el preprocesador SASS, estoy aprendiendo JavaScript y próximamente aprenderé el manejo de Wordpress.<br/>
           &#128231; Si te interesa, contáctame a través de: david.ale.ramirezpe@gmail.com
+        </p>
+        <p class="text-english">
+          &#128515; I'm a super positive and very enthusiastic programmer.<br/>
+          &#128215; I love to learn constantly, since I finished my university career I've been passionate about learning about programming through online platforms.<br/>
+          &#129504; I recently learned how to use the SASS preprocessor, I'm learning JavaScript, and I'll be learning Wordpress soon.<br/>
+          &#128231; If you are interested, contact me through: david.ale.ramirezpe@gmail.com
         </p>
       </article>
     </section>
     <!-- objetivos y metas -->
     <section class="card-obj_goal layer-container" id="obj_goal">
       <article class="card-objectives-content-double">
-        <h3>Objetivos:</h3>
-        <p>Continuar aprendiendo (con buenas prácticas) nuevos lenguajes de programación, entre ellos python, php, c# y java para llegar a desarrollar inteligencia artificial o ejercer seguridad informática.</p>
+        <h3 class="text-spanish">Objetivos:</h3>
+        <h3 class="text-english">Objectives:</h3>
+        <p class="text-spanish">Continuar aprendiendo (con buenas prácticas) nuevos lenguajes de programación, entre ellos python, php, c# y java para llegar a desarrollar inteligencia artificial o seguridad informática ya sea en proyectos personales o laborales.</p>
+        <p class="text-english">Continue learning (with good practices) new programming languages, including python, php, c# and java to develop artificial intelligence or computer security either in personal or work projects.</p>
       </article>
       <article class="card-goals-content-double">
-        <h3>Metas:</h3>
-        <p>Desarrollarme en el área laboral en una empresa que requiera mis conocimientos en desarrollo web.</p>
+        <h3 class="text-spanish">Metas:</h3>
+        <h3 class="text-english">Goals:</h3>
+        <p class="text-spanish">Desarrollarme en el área laboral en una empresa que requiera mis conocimientos en desarrollo web.</p>
+        <p class="text-english">Develop myself in the work area in a company that requires my knowledge in web development.</p>
       </article>
     </section>
     <!-- Proyectos -->
     <div class="card-diagonal">
       <section class="card-projects layer-container" id="projects">
-        <h2 class="title-content-unique">Proyectos:</h2>
+        <h2 class="title-content-unique text-spanish">Proyectos:</h2>
+        <h2 class="title-content-unique text-english">Projects:</h2>
         <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
-            <div class="card-proj-title">Manual HTML</div>
-            <div class="card-proj-subtitle">Completado: 100%</div>
-            <div class="card-proj-description">Creé un pequeño manual del lenguaje HTML en la marcha en que iba aprendiendo HTML.</div>
+            <div class="card-proj-title text-spanish">Manual HTML</div>
+            <div class="card-proj-title text-english">HTML manual</div>
+            <div class="card-proj-subtitle text-spanish">Completado: 100%</div>
+            <div class="card-proj-subtitle text-english">Completed: 100%</div>
+            <div class="card-proj-description text-spanish">Creé un pequeño manual del lenguaje HTML en la marcha en que iba aprendiendo HTML.</div>
+            <div class="card-proj-description text-english">I created a little HTML language manual as I was learning HTML.</div>
           </div>
           <div class="card-proj-footer">
             <a href="https://github.com/PatoKuack/manual_HTML" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-github">Ver repositorio</button></a>
+                class="button button-l-github">
+                <span class="text-spanish">Ver repositorio</span>
+                <span class="text-english">Watch repository</span>
+              </button></a>
             <a href="https://pk-manual-html.netlify.app/" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-web">Ver proyecto</button></a>
+                class="button button-l-web">
+                <span class="text-spanish">Ver proyecto</span>
+                <span class="text-english">Watch project</span>
+              </button></a>
           </div>
         </article>
         <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
-            <div class="card-proj-title">Manual CSS</div>
-            <div class="card-proj-subtitle">Completado: 100%</div>
-            <div class="card-proj-description">Creé un pequeño manual de CSS en la marcha en que iba aprendiendo HTML y CSS.</div>
+            <div class="card-proj-title text-spanish">Manual CSS</div>
+            <div class="card-proj-title text-english">CSS manual</div>
+            <div class="card-proj-subtitle text-spanish">Completado: 100%</div>
+            <div class="card-proj-subtitle text-english">Completed: 100%</div>
+            <div class="card-proj-description text-spanish">Creé un pequeño manual de CSS en la marcha en que iba aprendiendo HTML y CSS.</div>
+            <div class="card-proj-description text-english">I created a little CSS manual as I was learning HTML and CSS.</div>
           </div>
           <div class="card-proj-footer">
             <a href="https://github.com/PatoKuack/manual_CSS" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-github">Ver repositorio</button></a>
+                class="button button-l-github">
+                <span class="text-spanish">Ver repositorio</span>
+                <span class="text-english">Watch repository</span>
+              </button></a>
             <a href="https://pk-manual-css.netlify.app/" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-web">Ver proyecto</button></a>
+                class="button button-l-web">
+                <span class="text-spanish">Ver proyecto</span>
+                <span class="text-english">Watch project</span>
+              </button></a>
           </div>
         </article>
         <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
-            <div class="card-proj-title">Manual JavaScript</div>
-            <div class="card-proj-subtitle">Completado: 70%</div>
-            <div class="card-proj-description">Creé un pequeño manual de JavaScript en la marcha en que iba aprendiendo CSS y JavaScript.</div>
+            <div class="card-proj-title text-spanish">Manual JavaScript</div>
+            <div class="card-proj-title text-english">JavaScript manual</div>
+            <div class="card-proj-subtitle text-spanish">Completado: 70%</div>
+            <div class="card-proj-subtitle text-english">Completed: 70%</div>
+            <div class="card-proj-description text-spanish">Creé un pequeño manual de JavaScript en la marcha en que iba aprendiendo CSS y JavaScript.</div>
+            <div class="card-proj-description text-english">I created a little JavaScript manual as I was learning CSS and JavaScript. </div>
           </div>
           <div class="card-proj-footer">
             <a href="https://github.com/PatoKuack/manual_JavaScript" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-github">Ver repositorio</button></a>
+                class="button button-l-github">
+                <span class="text-spanish">Ver repositorio</span>
+                <span class="text-english">Watch repository</span>
+              </button></a>
             <a href="https://pk-manual-javascript.netlify.app/" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-web">Ver proyecto</button></a>
+                class="button button-l-web">
+                <span class="text-spanish">Ver proyecto</span>
+                <span class="text-english">Watch project</span>
+              </button></a>
           </div>
         </article>
         <article class="card-projects-content-multiple">
           <div class="card-decoration1"></div>
           <div class="card-decoration2"></div>
           <div class="card-proj-main">
-            <div class="card-proj-title">Manual GitHub</div>
-            <div class="card-proj-subtitle">Completado: 40%</div>
-            <div class="card-proj-description">Creé un pequeño manual de GitHub.</div>
+            <div class="card-proj-title text-spanish">Manual GitHub</div>
+            <div class="card-proj-title text-english">GitHub manual</div>
+            <div class="card-proj-subtitle text-spanish">Completado: 40%</div>
+            <div class="card-proj-subtitle text-english">Completed: 40%</div>
+            <div class="card-proj-description text-spanish">Creé un pequeño manual de GitHub.</div>
+            <div class="card-proj-description text-english">I created a little GitHub manual.</div>
           </div>
           <div class="card-proj-footer">
             <a href="https://github.com/PatoKuack/manual_GitHub" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-github">Ver repositorio</button></a>
+                class="button button-l-github">
+                <span class="text-spanish">Ver repositorio</span>
+                <span class="text-english">Watch repository</span>
+              </button></a>
             <a href="https://pk-manual-github.netlify.app/" target="_blank" rel="noopener noreferrer"><button
-                class="button button-l-web">Ver proyecto</button></a>
+                class="button button-l-web">
+                <span class="text-spanish">Ver proyecto</span>
+                <span class="text-english">Watch project</span>
+              </button></a>
           </div>
         </article>
       </section>
     </div>
-    <!-- <section class="card-experiencia layer-container">
+    <!-- Experiencia laboral -->
+    <!-- <section class="card-experience layer-container">
       <div class="card-experiencia-container"></div>
     </section> -->
   </main>
   <footer class="footer" id="footer">
     <div class="footer-network">
-      <h4 class="footer-network-title">Redes sociales:</h4>
+      <h4 class="footer-network-title margin-auto text-spanish">Redes sociales:</h4>
+      <h4 class="footer-network-title margin-auto text-english">Social media:</h4>
       <div class="footer-network-container">
         <a href="https://www.linkedin.com/in/david-alejandro-ramirez-perez/" target="_blank" rel="noopener noreferrer" class="footer-network-logo">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24" fill="currentColor" alt="icono de linkedin" title="icono de linkedin"><path d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91-1.182 0-1.886.796-2.195 1.565-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126 2.815 0 4.926 1.84 4.926 5.792zM2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254v12.869z"></path></svg>
@@ -261,7 +323,8 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <p>Copyright © 2022 Pato Kuack todos los derechos reservados.</p>
+      <p class="text-spanish">Copyright © 2022 Pato Kuack todos los derechos reservados.</p>
+      <p class="text-english">Copyright © 2022 Pato Kuack all rights reserved.</p>
     </div>
   </footer>
   <script src="javascript/scripts.js"></script>

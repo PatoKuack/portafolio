@@ -72,13 +72,13 @@
   position: absolute;
 }
 
-[class$="#{-content-unique}"]{
+[class*="#{-content-unique}"]{
   grid-area: 1/1/2/5;
   @include from(m){
     grid-column: 1/13;
   }
 }
-[class$="#{-content-double}"]{
+[class*="#{-content-double}"]{
   grid-column: span 4;
   grid-row: span 1;
   @include from(m){
@@ -86,7 +86,7 @@
     grid-row: span 1;
   }
 }
-[class$="#{-content-multiple}"]{
+[class*="#{-content-multiple}"]{
   grid-column: span 4;
   grid-row: span 1;
   background-color: $bg-alternative;
