@@ -1,0 +1,30 @@
+{
+  "name": "portafolio_web",
+  "version": "1.0.0",
+  "description": "Design of my portfolio to show what I can do with my programming skills.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatoKuack/portafolio.git"
+  },
+  "keywords": [
+    "Pato",
+    "Kuack",
+    "portafolio",
+    "portfolio",
+    "frontend",
+    "lenguajes",
+    "languages",
+    "programación",
+    "programming"
+  ],
+  "author": "David Alejandro Ramírez Pérez <david.ale.ramirezperez@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PatoKuack/portafolio/issues"
+  },
+  "homepage": "https://github.com/PatoKuack/portafolio#readme"
+}
